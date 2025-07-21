@@ -19,22 +19,19 @@ client = InferenceClient(
           }
          ],
 )"""
-    
+
 messagesG = []
-while True:
-    msg = input("User: \n")
-    if msg=='exit()': break
-    messagesG.append(
+def chatLoop(message, messageHistory: list = []):
+    messageHistory.append(
         {
             "role": "user",
-            "content": msg
+            "content": message
         }
     )
     completion = client.chat.completions.create(
         model="meta-llama/Llama-3.1-8B-Instruct",
-        messages=messagesG
+        messages=messageHistory
     )
-    messagesG.append(completion.choices[0].message)
-    print(f'AI: \n{completion.choices[0].message.content}')
+    messageHistory.append(completion.choices[0].message)
+    return completion.choices[0].message.content
 
-print(messagesG)

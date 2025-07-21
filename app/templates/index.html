@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LLM Chat</title>
+</head>
+<body>
+  <h1>Talk to Llama 3</h1>
+  <form method="POST">
+    <input type="text" name="user_input" placeholder="Ask something..." required>
+    <button type="submit">Send</button>
+  </form>
+
+  {% if response %}
+    <h2>Response:</h2>
+    <p>{{ response }}</p>
+  {% endif %}
+</body>
+</html>
