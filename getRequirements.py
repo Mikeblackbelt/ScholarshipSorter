@@ -17,31 +17,17 @@ model = AutoModelForSequenceClassification.from_pretrained('cross-encoder/ms-mar
 tokenizer = AutoTokenizer.from_pretrained('cross-encoder/ms-marco-MiniLM-L6-v2')
 
 
-# messagesG = []
-# while True:
-#     msg = input("User: \n")
-#     if msg=='exit()': break
-#     messagesG.append(
-#         {
-#             "role": "user",
-#             "content": msg
-#         }
-#     )
-#     completion = client.chat.completions.create(
-#         model="meta-llama/Llama-3.1-8B-Instruct",
-#         messages=messagesG
-#     )
-#     messagesG.append(completion.choices[0].message)
-#     print(f'AI: \n{completion.choices[0].message.content}')
-
-
 def get_filters(prompt):
     dynamic_prompt = """
 
     SYSTEM:
-    You are a JSON extractor.  Take a natural‑language request about student filters and output **only** a JSON object whose keys are valid fields and whose values are the constraints.  Use comparison operators (">", ">=", "<", "<=", "=") for numeric fields, and exact strings for categorical fields.  Do **not** output any extra text or formatting.
+    You are a JSON extractor.  Take a natural‑language request about student filters and output **only** a JSON object whose keys are valid fields and whose values are the constraints.  Use comparison operators (">", "<") for numeric fields, and exact strings for categorical fields.  Do **not** output any extra text or formatting.
+    For numeric filters, use this format:
+    "field": {"<": number} or "field": {">": number}
     Your options for filtering data are as follows ["gpa", "race_group", "gender", "interests","income"]
-    ONLY respond with these
+    ONLY respond with these options for filters.
+
+
     EXAMPLES:
     #1
     Input: "Find all students with GPA >= 3.5 who are Hispanic."
@@ -70,7 +56,7 @@ def get_filters(prompt):
     messagesG.append(completion.choices[0].message)
     response = completion.choices[0].message.content
     response = json.loads(response)
-    print(response)
+    print(f"Filter: {response}")
     return response
 
 
@@ -115,17 +101,84 @@ def filter_students(requirements):
                     drop_indexes.append(index)
             df = df.drop(index=drop_indexes)
 
-    print(df)
     return df
 
 
-# def rank_students(df,requirements):
-#         for key,value in requirements.items():
-#             if key == "scholarship_description":
+def rank_students(df,description):
+    scores = []
+    chunk_size = 10
+    for i in range(0, len(df), chunk_size):
+        chunk = df.iloc[i:i+chunk_size]
+        student_infos = ""
+        for index, row in chunk.iterrows():
+            student_infos += f"{index}. ({row['First Name']}) Interests: {row['Interests']}, Planned Major: {row['Planned Major']}, Career Path: {row['Career Path']}\n"
+        dynamic_prompt2 = f"""
+            SYSTEM:
+            You are an AI assistant that ranks students based on how well they match a scholarship description.
+
+            Your job is to return **only float scores between 0 and 1**, one per student, in the order given.
+
+            INPUT:
+            1. A scholarship description.
+            2. A list of student profiles (each with interests, planned major, and career path).
+
+            RULES:
+            - Output must contain **only float scores**, one per line, in the same order as the student list.
+            - Do **not** include any code, markdown, labels, explanations, or extra text.
+            - Scores must be between 0 and 1.
+            - Make sure to give every student one score
+
+            SCORING CRITERIA:
+            - Higher score if student interests or major match the scholarship theme.
+            - Boost score for relevant career paths.
+            - Penalize vague or generic goals.
+            - Do not reject or filter; just score relevance.
+
+            EXAMPLE:
+
+            Scholarship: Looking for female students passionate about public health or social work, especially from low-income backgrounds.
+
+            Student Profiles (2):
+            1. (Simon) Interests: Whatever helps people idk, Planned Major: Social Work, Career Path: Nonprofit Organizer
+            2. (Michael) Interests: Track and Field, Planned Major: Undecided, Career Path: Athlete
+
+            Output:
+            1. Simon: 0.82
+            2. Michael: 0.10
+
+            ---
+
+            NOW PROCESS:
+
+            Scholarship: {description}
+
+            Student Profiles({len(chunk)}):
+            {student_infos}
+
+            Output:
+            """
+        messagesG = [{
+                    "role": "user",
+                    "content": dynamic_prompt2
+                }]
+
+        completion = client.chat.completions.create(
+                model="meta-llama/Llama-3.1-8B-Instruct",
+                messages=messagesG
+            )
+        messagesG.append(completion.choices[0].message)
+        response = completion.choices[0].message.content
+        response = response.split("\n")
+        scores.extend(response)
+    df['match_score'] = list(map(float, scores))
+    sorted_df = df.sort_values(by='match_score', ascending=False)
+    print(sorted_df)
+    return sorted_df
 
 
-filters = get_filters("I need students that makes less than 200000 per year who are Caucasian")
+filters = get_filters("I need Asian students")
 
 filtered_students = filter_students(filters)
-# ranked_students = rank_students(filtered_students,description)
+description = "The SBB Research Group STEM Scholarship encourages and empowers students to create significant value and countless new opportunities for society through their pursuit of higher learning, especially through interdisciplinary combinations of Science, Technology, Engineering, and Mathematics (STEM)."
+ranked_students = rank_students(filtered_students,description)
 
