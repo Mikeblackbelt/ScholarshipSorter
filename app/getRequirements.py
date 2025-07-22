@@ -5,12 +5,14 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import json
 import pandas as pd
 import torch
-dotenv.load_dotenv(".env")
+dotenv.load_dotenv("n.env")
 token = os.environ["HF_TOKEN"]
 client = InferenceClient(
     provider="novita",
     api_key=token,
 )
+
+gdf = pd.read_csv("student_data.csv")
 
 
 model = AutoModelForSequenceClassification.from_pretrained('cross-encoder/ms-marco-MiniLM-L6-v2')
@@ -106,7 +108,7 @@ def filter_students(requirements):
 
 def rank_students(df,description):
     scores = []
-    chunk_size = 10
+    chunk_size = 5
     for i in range(0, len(df), chunk_size):
         chunk = df.iloc[i:i+chunk_size]
         student_infos = ""
