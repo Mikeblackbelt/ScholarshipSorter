@@ -1,31 +1,33 @@
-OSIS,First Name,Last Name,GPA,Income,Race,Gender,Interests,Planned Major,Career Path,Email,Grade
-226118083,David,Smith,94,117136,Other,F,Mathematics,Computer Science,Analyst,mmatiych@icloud.com,11
-261892541,Johnson,Davidson,76,323391,Hispanic,M,Computer Science,Computer Science,I want to do something in cs i guess,mmatiych@icloud.com,9
-296703443,Edward,Mercado,74,579063,White,F,I am interested in biloy,Biomedical Sciences,Doctor  or surgeon,mmatiych@icloud.com,12
-246197171,Josephine,Smithson,84,162151,Not Specified,M,I dont know,Applied Mathematics,i dont know,mmatiych@icloud.com,9
-242403588,Oliver,Eric,84,438082,Not Specified,F,Cooking,Undecided,chef,mmatiych@icloud.com,9
-229078604,Oscar,Molina,79,156955,White,M,Track and Field,Undecided,Athlete,mmatiych@icloud.com,10
-285272697,Michael,Matiychenko,92,99964,Not Specified,M,Medicine or like computer sciene i dont know,Medicine,Research or Nurse ??,mmatiych@icloud.com,12
-213456789,Linda,Chen,97,48000,Asian,F,Physics and math,Engineering,Engineer,linda.chen@example.com,11
-198765432,Ethan,Lee,88,90000,Asian,M,Robotics,Mechanical Engineering,Product Designer,ethan.lee@example.com,10
-267198745,Ava,Gonzalez,91,58000,Hispanic,F,Writing and debate,English,Author or Journalist,ava.g@example.com,12
-284561298,Daniel,Wong,85,72000,Asian,M,Coding and music,Computer Science,Software Engineer,dwong@example.com,11
-267891234,Grace,Nguyen,89,66000,Asian,F,Biology and Art,Biology,Medical Illustrator,grace.nguyen@example.com,10
-254782341,Sophia,Johnson,78,110000,Black,F,Dance and Theater,Performing Arts,Performer,sophiaj@example.com,9
-210398475,Liam,Ramirez,82,47000,Hispanic,M,Finance,Economics,Financial Analyst,liamr@example.com,11
-276589341,Emily,Kim,95,51000,Asian,F,Math and AI,Computer Science,Researcher,emilyk@example.com,12
-219846273,Noah,Patel,86,135000,Asian,M,Medicine and Genetics,Biology,Doctor,noahp@example.com,10
-293847162,Isabella,Murphy,88,62000,White,F,Law and Ethics,Political Science,Lawyer,isam@example.com,11
-267843210,Benjamin,Choi,92,83000,Asian,M,Computer Science,Computer Science,AI Engineer,bchoi@example.com,12
-205968374,Mia,Torres,79,75000,Latino,F,Education and history,History,Teacher,miat@example.com,10
-283746192,Lucas,Wu,90,67000,Asian,M,Game dev and math,Computer Science,Game Developer,lucaswu@example.com,12
-284567834,Naomi,Kawahara,87,45000,Asian,F,Designing subway systems and Japanese history,Urban Studies,City Planner,naomik@example.com,11
-273849201,Andre,Brown,80,88000,Black,M,I like watching courtroom dramas,Legal Studies,Paralegal,andreb@example.com,10
-294756183,Zoey,Fisher,75,71000,White,F,Whatever helps people idk,Social Work,Nonprofit Organizer,zoeyf@example.com,9
-261978345,Henry,Zhou,96,52000,Asian,M,Chess and quantum physics,Physics,Quantum Researcher,henryz@example.com,12
-250394812,Lola,Singh,83,102000,South Asian,F,Baking cakes and coding,Culinary Tech,Food Technologist,lolasingh@example.com,10
-272893740,Max,Gutierrez,77,93000,Hispanic,M,Skating lifting anime,Graphic Design,Creative Director,maxg@example.com,11
-287394812,Isabelle,Ng,91,62000,Asian,F,Just want to make the world better,Environmental Science,Policy Maker,isabelleg@example.com,12
-284019234,Jayden,Park,85,58000,Korean,M,Building things and fixing old tech,Engineering,Mechanical Technician,jayp@example.com,10
-275981234,Eli,Goldberg,93,99000,Jewish,M,Deep learning linguistics and philosophy,Computational Linguistics,AI Ethics Researcher,elig@example.com,12
-269843729,Alina,Mehta,79,104000,South Asian,F,Weird animals and global warming,Biology,Science Communicator,alinam@example.com,9
+OSIS,First Name,Last Name,GPA,Income,Race,Gender,Interests,Planned Major,Career Path,Email,Grad,Service Description
+198765432,Ethan,Lee,88,90000,Asian,M,Robotics,Mechanical Engineering,Product Designer,ethan.lee@example.com,10,Volunteered at STEM camp for 3 summers; Mentored younger robotics club members weekly for 1 year
+267198745,Ava,Gonzalez,91,58000,Hispanic,F,Writing and debate,English,Author or Journalist,ava.g@example.com,12,Organized school debate tournaments for 2 years; Wrote articles for local youth newspaper monthly for 1.5 years
+284561298,Daniel,Wong,85,72000,Asian,M,Coding and music,Computer Science,Software Engineer,dwong@example.com,11,Taught coding at local library every Saturday for 8 months; Played piano at senior center twice a month for 1 year
+267891234,Grace,Nguyen,89,66000,Asian,F,Biology and Art,Biology,Medical Illustrator,grace.nguyen@example.com,10,Painted murals at children's hospital over 6 months; Volunteered at science museum on weekends for 1 year
+254782341,Sophia,Johnson,78,110000,Black,F,Dance and Theater,Performing Arts,Performer,sophiaj@example.com,9,Taught dance at community center weekly for 4 months; Performed in charity theater shows for 2 years
+210398475,Liam,Ramirez,82,47000,Hispanic,M,Finance,Economics,Financial Analyst,liamr@example.com,11,Helped run school budget club for 1.5 years; Tutored peers in math twice a week for 6 months
+276589341,Emily,Kim,95,51000,Asian,F,Math and AI,Computer Science,Researcher,emilyk@example.com,12,Organized AI workshops for middle school girls for 1 year; Volunteered in local tech literacy program for 2 summers
+219846273,Noah,Patel,86,135000,Asian,M,Medicine and Genetics,Biology,Doctor,noahp@example.com,10,Shadowed doctor at clinic for 6 months; Led health awareness campaign at school for 1 year
+293847162,Isabella,Murphy,88,62000,White,F,Law and Ethics,Political Science,Lawyer,isam@example.com,11,Interned at local law office for 3 months; Participated in city youth court weekly for 1 year
+267843210,Benjamin,Choi,92,83000,Asian,M,Computer Science,Computer Science,AI Engineer,bchoi@example.com,12,Built websites for local nonprofits for 1 year; Taught Python to middle schoolers for 8 months
+205968374,Mia,Torres,79,75000,Latino,F,Education and history,History,Teacher,miat@example.com,10,Helped ESL students with homework every week for 1 year; Volunteered at local library storytime for 9 months
+283746192,Lucas,Wu,90,67000,Asian,M,Game dev and math,Computer Science,Game Developer,lucaswu@example.com,12,Created educational math games for elementary schools for 1 year; Helped organize gaming club events for 2 years
+284567834,Naomi,Kawahara,87,45000,Asian,F,Designing subway systems and Japanese history,Urban Studies,City Planner,naomik@example.com,11,Interned with city planning office for 2 summers; Led local history tours monthly for 1 year
+273849201,Andre,Brown,80,88000,Black,M,I like watching courtroom dramas,Legal Studies,Paralegal,andreb@example.com,10,Helped in mock trial club for 1 year; Volunteered with courthouse archives for 4 months
+294756183,Zoey,Fisher,75,71000,White,F,Whatever helps people idk,Social Work,Nonprofit Organizer,zoeyf@example.com,9,Assisted in food bank monthly for 2 years; Helped organize clothing drives at school for 6 months
+261978345,Henry,Zhou,96,52000,Asian,M,Chess and quantum physics,Physics,Quantum Researcher,henryz@example.com,12,Coached middle school chess team weekly for 1 year; Tutored AP Physics students for 6 months
+250394812,Lola,Singh,83,102000,South Asian,F,Baking cakes and coding,Culinary Tech,Food Technologist,lolasingh@example.com,10,Organized bake sales to raise money for charity every semester for 2 years; Volunteered at community tech camp for 1 summer
+272893740,Max,Gutierrez,77,93000,Hispanic,M,Skating lifting anime,Graphic Design,Creative Director,maxg@example.com,11,Designed posters for school events for 1.5 years; Helped build skate park with local initiative for 6 months
+287394812,Isabelle,Ng,91,62000,Asian,F,Just want to make the world better,Environmental Science,Policy Maker,isabelleg@example.com,12,Led recycling program at school for 2 years; Worked with climate activism group monthly for 1 year
+284019234,Jayden,Park,85,58000,Korean,M,Building things and fixing old tech,Engineering,Mechanical Technician,jayp@example.com,10,Repaired electronics for seniors in community for 1 year; Volunteered at school makerspace weekly for 8 months
+275981234,Eli,Goldberg,93,99000,Jewish,M,Deep learning linguistics and philosophy,Computational Linguistics,AI Ethics Researcher,elig@example.com,12,Published essays on tech ethics for 6 months; Taught logic puzzles to middle schoolers for 1 year
+269843729,Alina,Mehta,79,104000,South Asian,F,Weird animals and global warming,Biology,Science Communicator,alinam@example.com,9,Worked at animal shelter weekly for 1 year; Created climate education videos monthly for 1 year
+295001111,Chloe,Tran,92,62000,Asian,F,Neuroscience and mental health,Psychology,Neuroscientist,chloet@example.com,11,Founded mental health club hosted monthly events for 2 years; Interned at university neuro lab for 2 summers
+295001112,Jason,Reed,81,97000,White,M,Gaming and sports,Undecided,Streamer,jreed@example.com,10,Went to school clean-up day once for extra credit; Helped carry water bottles during sports day
+295001113,Aaliyah,Thomas,95,50000,Black,F,Public policy and equity,Political Science,Civil Rights Attorney,aaliyah.t@example.com,12,Led voter registration drives for 3 years; Interned at local government office during junior year
+295001114,Kai,Matsuda,84,88000,Asian,M,Music and anime,Music,Sound Designer,kaim@example.com,11,Played guitar in school talent show once; Helped band set up equipment twice
+295001115,Ruby,Chang,98,47000,Asian,F,Environmental science,Environmental Studies,Climate Scientist,rubyc@example.com,12,Organized city-wide park cleanups for 3 years; Spoke at local government environmental hearings 4 times
+295001116,Leo,Martinez,75,103000,Hispanic,M,Video games and cars,Undecided,Mechanic,leom@example.com,10,Wrote one sentence about kindness for a school wall poster; Missed most meetings of school service club
+295001117,Sara,White,89,66000,White,F,Health education and nutrition,Public Health,Dietitian,saraw@example.com,11,Created bilingual nutrition guides for local clinics for 1.5 years; Volunteered at free health screenings monthly for 1 year
+295001118,Nico,Kwon,93,82000,Korean,M,AI and ethics,Computer Science,AI Policy Advisor,nicok@example.com,12,Developed ethics curriculum for youth coding camp for 2 years; Worked with nonprofit on digital rights legislation for 1 year
+295001119,Maya,Ali,82,72000,South Asian,F,Art and painting,Studio Art,Illustrator,mayaa@example.com,9,Painted a poster for school event once; Helped with decorations for 2 class events
+295001120,Adrian,Green,87,58000,Black,M,Aerospace and flight,Mechanical Engineering,Aerospace Engineer,adriang@example.com,11,Interned at local airport mechanics department for 6 months; Created flight club and trained peers in simulators for 2 years
