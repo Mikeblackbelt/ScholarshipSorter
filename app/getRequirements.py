@@ -183,4 +183,3 @@ filters = get_filters("I need Asian students")
 filtered_students = filter_students(filters)
 description = "The SBB Research Group STEM Scholarship encourages and empowers students to create significant value and countless new opportunities for society through their pursuit of higher learning, especially through interdisciplinary combinations of Science, Technology, Engineering, and Mathematics (STEM)."
 ranked_students = rank_students(filtered_students,description)
-
