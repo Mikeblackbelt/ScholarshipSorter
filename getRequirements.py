@@ -5,7 +5,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import json
 import pandas as pd
 import torch
-dotenv.load_dotenv("n.env")
+dotenv.load_dotenv(".env")
 token = os.environ["HF_TOKEN"]
 client = InferenceClient(
     provider="novita",
